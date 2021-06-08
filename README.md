@@ -1,10 +1,7 @@
 Hello, this is SICMU,
+Users can share thier favorite songs and save a playlist
 
-this project allows 
-  -users to share thier favorite songs
-  -and save a playlist
-
-The goal of building Sicmu was to learn to implement Graphql, Apollo, and Material UI
+Building Sicmu was to learn to implement Graphql, Apollo, and Material UI.
 I learned how to write mutations, querys, and subscriptions
 
 try it:
