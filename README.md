@@ -9,7 +9,7 @@ I learned how to write mutations, querys, and subscriptions
 
 try it:
 
-url link
+https://anguianoo.github.io/sicmu-share/
 
 
 
