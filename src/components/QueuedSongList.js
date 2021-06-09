@@ -7,7 +7,7 @@ import {
   useMediaQuery
 } from "@material-ui/core"
 import { Delete } from "@material-ui/icons"
-import React, { useEffect } from "react"
+import React from "react"
 import { ADD_OR_REMOVE_FROM_QUEUE } from "../graphql/mutation"
 
 function QueuedSongList({ queue }) {

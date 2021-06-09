@@ -9,14 +9,14 @@ import {
   makeStyles,
   Tooltip
 } from "@material-ui/core"
-import { Pause, PlayArrow, Save, Delete } from "@material-ui/icons"
-import EditIcon from "@material-ui/icons/Edit"
-import React, { useEffect, useState } from "react"
+import { Pause, PlayArrow, Save } from "@material-ui/icons"
+
+import React from "react"
 import { GET_SONGS } from "../graphql/subscriptions"
 import { SongContext } from "../App"
 import { useMutation } from "@apollo/client"
 import { ADD_OR_REMOVE_FROM_QUEUE } from "../graphql/mutation"
-import { REMOVE_SONG } from "../graphql/mutation"
+// import { REMOVE_SONG } from "../graphql/mutation"
 
 function SongList() {
   const { data, loading, error } = useSubscription(GET_SONGS)
@@ -82,7 +82,7 @@ function Song({ song }) {
       localStorage.setItem("queue", JSON.stringify(data.addOrRemoveFromQueue))
     }
   })
-  const [removeSong] = useMutation(REMOVE_SONG)
+  // const [removeSong] = useMutation(REMOVE_SONG)
 
   const { state, dispatch } = React.useContext(SongContext)
   const [currentSongPlaying, setCurrentSongPlaying] = React.useState(false)
@@ -108,16 +108,16 @@ function Song({ song }) {
       }
     })
   }
-  async function handleRemoveSong() {
-    const data = await removeSong({
-      variables: { id },
-      update: cache => {
-        const prevSongs = cache.readQuery({ query: GET_SONGS })
-        const newSongs = prevSongs.songs.filter(song => song.id !== id)
-        cache.writeQuery({ query: GET_SONGS, data: { song: newSongs } })
-      }
-    })
-  }
+  // async function handleRemoveSong() {
+  //   const data = await removeSong({
+  //     variables: { id },
+  //     update: cache => {
+  //       const prevSongs = cache.readQuery({ query: GET_SONGS })
+  //       const newSongs = prevSongs.songs.filter(song => song.id !== id)
+  //       cache.writeQuery({ query: GET_SONGS, data: { song: newSongs } })
+  //     }
+  //   })
+  // }
 
   return (
     <Card className={classes.container}>
@@ -161,15 +161,15 @@ function Song({ song }) {
                   <Save color="secondary" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="delete">
+              {/* <Tooltip title="delete">
                 <IconButton
-                  onClick={handleRemoveSong}
+                  onClick={}
                   size="small"
                   color="primary"
                 >
                   <Delete color="error" />
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
             </CardContent>
           </CardContent>
         </div>

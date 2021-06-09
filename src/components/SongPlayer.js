@@ -8,7 +8,7 @@ import {
   makeStyles
 } from "@material-ui/core"
 import { Pause, PlayArrow, SkipNext, SkipPrevious } from "@material-ui/icons"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import QueuedSongList from "./QueuedSongList"
 import { SongContext } from "../App"
 import { useQuery } from "@apollo/client"
