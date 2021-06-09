@@ -27,18 +27,18 @@ export const ADD_SONG = gql`
     }
   }
 `
-export const REMOVE_SONG = gql`
-  mutation removeSong($id: uuid!) {
-    delete_songs(where: { id: { _eq: $id } }) {
-      returning {
-        id
-        artist
-        created_at
-        duration
-        thumbnail
-        title
-        url
-      }
-    }
-  }
-`
+// export const REMOVE_SONG = gql`
+//   mutation removeSong($id: uuid!) {
+//     delete_songs(where: { id: { _eq: $id } }) {
+//       returning {
+//         id
+//         artist
+//         created_at
+//         duration
+//         thumbnail
+//         title
+//         url
+//       }
+//     }
+//   }
+// `
